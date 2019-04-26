@@ -1,8 +1,8 @@
 <template>
   <el-container class="layout-default">
-    <el-header>
+    <!-- <el-header> -->
       <my-header/>
-    </el-header>
+    <!-- </el-header> -->
     <el-main>
       <nuxt/>
     </el-main>
