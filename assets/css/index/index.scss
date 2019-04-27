@@ -1,6 +1,6 @@
 .page-index{
-  .e-menu-wrap{
-    width: 230px;
+  // .e-menu-wrap{
+  //   width: 230px;
     .m-menu {
       width: 230px;
       height: 475px;
@@ -175,6 +175,7 @@
         z-index: 9999;
 
         h4 {
+          color: #444;
           margin-top: 24px;
           height: 22px;
           line-height: 22px;
@@ -197,7 +198,7 @@
         }
       }
     }
-  }
+  // }
 
     .slide {
       height: 240px;
