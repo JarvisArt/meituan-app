@@ -134,14 +134,14 @@ router.post('/verify', async (ctx, next) => {
     user: ctx.request.body.username
   }
   let mailOption = {
-    from: `"认证邮件<${Email.smtp.user}>"`,
+    from: `"认证邮件"<${Email.smtp.user}>`,
     to: ko.email,
     subject: 'Jarvis美团注册码',
     html: `您在Jarvis美团中注册，您的邀请码是${ko.code}`
   }
   await transporter.sendMail(mailOption, (error, info) => {
     if (error) {
-      return console.log('error')
+      return console.log(error)
     } else {
       Store.hmset(`nodemail:${ko.user}`, 'code', ko.code, 'expire', ko.expire, 'email', ko.email)
     }
