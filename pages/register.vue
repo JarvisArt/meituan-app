@@ -184,8 +184,7 @@ export default {
           }).then(({status, data}) => {
             if (status === 200) {
               if (data && data.code === 0) {
-                // location.href = '/login'
-                console.log('注册成功，跳到登录页')
+                location.href = '/login'
               } else {
                 self.error = data.msg
               }

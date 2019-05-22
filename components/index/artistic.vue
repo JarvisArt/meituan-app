@@ -76,7 +76,7 @@ export default {
     // }
   },
   methods: {
-    // over: async function (e) {
+    over: async function (e) {
     //   let dom = e.target
     //   let tag = dom.tagName.toLowerCase()
     //   let self = this
@@ -104,7 +104,7 @@ export default {
     //       self.list[self.kind] = []
     //     }
     //   }
-    // }
+    }
   },
 
 }
