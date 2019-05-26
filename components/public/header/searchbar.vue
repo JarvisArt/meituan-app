@@ -17,18 +17,16 @@
           <button class="el-button el-button--primary"><i class="el-icon-search"/></button>
           <dl class="hotPlace" v-if="isHotPlace">
             <dt>热门搜索</dt>
-            <dd v-for="(item, idx) in isHotPlace" :key="idx">{{ item }}</dd>
+            <dd v-for="(item, idx) in $store.state.home.hotPlace" :key="idx">{{ item.name }}</dd>
           </dl>
           <dl class="searchList" v-if="isSearchList">
             <dd v-for="(item, idx) in searchList" :key="idx">{{ item.name }}</dd>
           </dl>
         </div>
         <p class="suggset">
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
+           <a href="#" v-for="(item, idx) in $store.state.home.hotPlace" :key="idx">
+             {{item.name}}
+           </a>
         </p>
         <ul class="nav">
           <li>
