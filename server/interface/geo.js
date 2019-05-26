@@ -1,6 +1,7 @@
 import Router from 'koa-router'
 import axios from './utils/axios'
 import Province from '../dbs/models/province'
+import Menu from '../dbs/models/menu'
 
 let router = new Router({prefix: '/geo'})
 
@@ -54,6 +55,10 @@ router.get('/menu', async (ctx) => {
   //     menu: []
   //   }
   // }
+  const {menu} = await Menu.findOne()
+  ctx.body = {
+    menu
+  }
 })
 
 
