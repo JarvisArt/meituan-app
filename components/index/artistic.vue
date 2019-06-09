@@ -53,57 +53,57 @@ export default {
     }
   },
   async mounted(){
-    // let self=this;
-    // let {status,data:{count,pois}}=await self.$axios.get('/search/resultsByKeywords',{
-    //   params: {
-    //     keyword:'酒店',
-    //     city:self.$store.state.geo.position.city
-    //   }
-    // })
-    // if(status === 200 && count > 0){
-    //   let result = pois.map(item=>{
-    //     return {
-    //       title: item.name,
-    //       pos: item.pos,
-    //       price: item.price || '暂无',
-    //       img: item.photoUrl || 'https://p1.meituan.net/msmerchant/9480fc7bed1f8b92f69b7f8fde219da6273275.jpg@368w_208h_1e_1c',
-    //       url: item.url || 'https://qd.meituan.com/'
-    //     }
-    //   })
-    //   self.list[self.kind] = result
-    // }else{
-    //   self.list[self.kind] = []
-    // }
+    let self=this;
+    let {status,data:{count,pois}}=await self.$axios.get('/search/resultsByKeywords',{
+      params: {
+        keyword:'酒店',
+        city:self.$store.state.geo.position.city
+      }
+    })
+    if(status === 200 && count > 0){
+      let result = pois.map(item=>{
+        return {
+          title: item.name,
+          pos: item.pos,
+          price: item.price || '暂无',
+          img: item.photoUrl || 'https://p1.meituan.net/msmerchant/9480fc7bed1f8b92f69b7f8fde219da6273275.jpg@368w_208h_1e_1c',
+          url: item.url || 'https://qd.meituan.com/'
+        }
+      })
+      self.list[self.kind] = result
+    }else{
+      self.list[self.kind] = []
+    }
   },
   methods: {
     over: async function (e) {
-    //   let dom = e.target
-    //   let tag = dom.tagName.toLowerCase()
-    //   let self = this
-    //   if (tag === 'dd') {
-    //     this.kind = dom.getAttribute('kind')
-    //     let keyword = dom.getAttribute('keyword')
-    //     let {status,data:{count,pois}}=await self.$axios.get('/search/resultsByKeywords',{
-    //       params:{
-    //         keyword,
-    //         city:self.$store.state.geo.position.city
-    //       }
-    //     })
-    //     if(status === 200 && count > 0){
-    //       let result = pois.map(item=>{
-    //         return {
-    //           title: item.name,
-    //           pos: item.pos,
-    //           price: item.price || '暂无',
-    //           img: item.photoUrl || 'https://p1.meituan.net/msmerchant/9480fc7bed1f8b92f69b7f8fde219da6273275.jpg@368w_208h_1e_1c',
-    //           url: item.url || 'https://qd.meituan.com/'
-    //         }
-    //       })
-    //       self.list[self.kind] = result
-    //     }else{
-    //       self.list[self.kind] = []
-    //     }
-    //   }
+      let dom = e.target
+      let tag = dom.tagName.toLowerCase()
+      let self = this
+      if (tag === 'dd') {
+        this.kind = dom.getAttribute('kind')
+        let keyword = dom.getAttribute('keyword')
+        let {status,data:{count,pois}}=await self.$axios.get('/search/resultsByKeywords',{
+          params:{
+            keyword,
+            city:self.$store.state.geo.position.city
+          }
+        })
+        if(status === 200 && count > 0){
+          let result = pois.map(item=>{
+            return {
+              title: item.name,
+              pos: item.pos,
+              price: item.price || '暂无',
+              img: item.photoUrl || 'https://p1.meituan.net/msmerchant/9480fc7bed1f8b92f69b7f8fde219da6273275.jpg@368w_208h_1e_1c',
+              url: item.url || 'https://qd.meituan.com/'
+            }
+          })
+          self.list[self.kind] = result
+        }else{
+          self.list[self.kind] = []
+        }
+      }
     }
   },
 
