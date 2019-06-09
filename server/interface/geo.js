@@ -2,6 +2,7 @@ import Router from 'koa-router'
 import axios from './utils/axios'
 import Province from '../dbs/models/province'
 import Menu from '../dbs/models/menu'
+import City from '../dbs/models/city'
 
 let router = new Router({prefix: '/geo'})
 
@@ -58,6 +59,27 @@ router.get('/menu', async (ctx) => {
   const {menu} = await Menu.findOne()
   ctx.body = {
     menu
+  }
+})
+
+router.get('/city', async (ctx) => {
+  const { provinceId } = ctx.query;
+  if (provinceId) {
+    let city = await City.findOne({ id: provinceId })
+    ctx.body = {
+      city: city.value
+    }
+  } else {
+    let city = await City.find()
+    let cityArr = []
+    city && city.forEach((list) => {
+      list.value.forEach((item) => {
+        cityArr.push(item)
+      })
+    })
+    ctx.body = {
+      city: cityArr
+    }
   }
 })
 

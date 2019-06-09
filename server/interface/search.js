@@ -56,7 +56,6 @@ router.get('/hotPlace', async (ctx) => {
   // let city = ctx.store ? ctx.store.geo.position.city : ctx.query.city
   try {
     let result = await Poi.find().limit(5)
-
     ctx.body = {
       code: 0,
       result: result.map(item => {
