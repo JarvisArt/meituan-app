@@ -1,11 +1,10 @@
 .page-index{
-  // .e-menu-wrap{
-  //   width: 230px;
     .m-menu {
       width: 230px;
       height: 475px;
       box-sizing: border-box;
       margin-top: -50px;
+      margin-left: 20px;
       color: #FFF;
       position: relative;
       background: linear-gradient(-180deg, rgba(2, 181, 157, .85) 2%, rgba(22, 146, 183, .85) 100%);
@@ -175,7 +174,6 @@
         z-index: 9999;
 
         h4 {
-          color: #444;
           margin-top: 24px;
           height: 22px;
           line-height: 22px;
@@ -198,8 +196,6 @@
         }
       }
     }
-  // }
-
     .slide {
       height: 240px;
       margin: 10px;
