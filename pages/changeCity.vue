@@ -7,12 +7,12 @@
    </el-row>
    <el-row>
      <el-col :span="24">
-       <!-- <Hot /> -->
+       <Hot />
      </el-col>
    </el-row>
    <el-row>
      <el-col :span="24">
-       <!-- <Categroy /> -->
+       <Categroy />
      </el-col>
    </el-row>
   </div>
@@ -20,13 +20,13 @@
 
 <script  type='text/ecmascript-6'>
 import iSelect from '@/components/changeCity/iselect'
-// import Hot from '@/components/changeCity/hot'
-// import Categroy from '@/components/changeCity/categroy'
+import Hot from '@/components/changeCity/hot'
+import Categroy from '@/components/changeCity/categroy'
 export default {
   components: {
     iSelect,
-    // Hot,
-    // Categroy
+    Hot,
+    Categroy
   }
 }
 </script>

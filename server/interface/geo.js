@@ -83,5 +83,14 @@ router.get('/city', async (ctx) => {
   }
 })
 
+router.get('/hotCity', async (ctx) => {
+  let hots = await City.find().limit(10)
+  ctx.body = {
+    hots: hots.map((item) => {
+      return item.value[0]
+    })
+  }
+})
+
 
 export default router;
