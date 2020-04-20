@@ -19,4 +19,17 @@ $ npm start
 $ npm run generate
 ```
 
+## Backend Services
+
+``` bash
+# launch redis
+$ redis-server
+
+# launch mongodb
+$ mongod --dbpath e:\data\db(db path)
+
+# db import
+$ mongoimport -d dbs -c test pois.dat
+```
+
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
